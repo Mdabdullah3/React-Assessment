@@ -1,10 +1,11 @@
 import React from 'react';
 import Navbar from '../../layout/main/Navbar';
+import CategoriSection from '../../components/CategoriSection';
 const Home = () => {
     return (
         <div>
             <Navbar />
-            <h1> Hello World</h1>
+            <CategoriSection />
         </div>
     );
 };

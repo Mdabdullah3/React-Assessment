@@ -5,7 +5,7 @@ import SearchBar from '../../components/ui/SearchBar';
 import { BiUser, BiShoppingBag } from 'react-icons/bi';
 const Navbar = () => {
     return (
-        <div className='grid grid-cols-3 w-10/12 mx-auto items-center mt-10'>
+        <div className='grid grid-cols-3 mb-8 w-10/12 mx-auto items-center mt-10'>
             <div className='flex items-end gap-5'>
                 <img src={logo} alt="" />
                 <div>
