@@ -8,7 +8,7 @@ const CategoriSection = () => {
       <hr />
       <div className="mx-auto w-10/12 flex justify-between">
         <div class="dropdown">
-          <div className="flex items-center justify-between w-52 bg-[#F5CCDC] px-2 py-4 text-[#471D6B]">
+          <div className="flex items-center justify-between w-60 bg-[#F5CCDC] px-4 py-4 text-[#471D6B]">
             <h1 className="flex items-center gap-2 uppercase tracking-wider">
               <span className="text-2xl">
                 <BiMenu />
