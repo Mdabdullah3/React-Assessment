@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Tamim Khan",
+    "img": "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "email": "tamim@gmail.com",
+    "birthday": "April 10 1994",
+    "FatherName": "Nojrul Haque",
+    "address": "Mirpur, Dhaka, Bangladesh",
+    "education": "Bsc In Computer Science"
+  },
+  {
+    "id": 2,
+    "name": "Md Abdullah",
+    "img": "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "email": "abdullah@gmail.com",
+    "birthday": "April 20 2001",
+    "FatherName": "Mir Hossen",
+    "address": "Mirpur, Dhaka, Bangladesh",
+    "education": "Bsc In Computer Science"
+  },
+  {
+    "id": 3,
+    "name": "Tanjil Hossen",
+    "img": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
+    "email": "tanjil@gmail.com",
+    "birthday": "May 10 2004",
+    "FatherName": "Tamim Haque",
+    "address": "Badda, Dhaka, Bangladesh",
+    "education": "Diploma In Computer"
+  },
+  {
+    "id": 4,
+    "name": "Shakib Hasan",
+    "img": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHVzZXIlMjBwcm9maWxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
+    "email": "shakib@gmail.com",
+    "birthday": "April 10 2000",
+    "FatherName": "Ratul Shikdar",
+    "address": "Amtola, Dhaka, Bangladesh",
+    "education": "BBA "
+  },
+  {
+    "id": 5,
+    "name": "Tonmoy Khan",
+    "img": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60",
+    "email": "tonmoy@gmail.com",
+    "birthday": "Jun 10 1991",
+    "FatherName": "Nojrul Haque",
+    "address": "Mirpur, Dhaka, Bangladesh",
+    "education": "Bsc In Computer Science"
+  },
+  {
+    "id": 6,
+    "name": "Anamul Haque",
+    "img": "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "email": "anamul@gmail.com",
+    "birthday": "April 10 2000",
+    "FatherName": "Rishad Haque",
+    "address": "Mirpur, Dhaka, Bangladesh",
+    "education": "Bsc In Computer Science"
+  },
+  {
+    "id": 7,
+    "name": "Mehdi Hasan",
+    "img": "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1978&q=80",
+    "email": "mehdi@gmail.com",
+    "birthday": "May 10 1994",
+    "FatherName": "Tahmid Haque",
+    "address": "Mirpur, Dhaka, Bangladesh",
+    "education": "Bsc In Computer Science"
+  },
+  {
+    "id": 8,
+    "name": "Riya Khan",
+    "img": "https://images.unsplash.com/photo-1531256456869-ce942a665e80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHVzZXIlMjBwcm9maWxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
+    "email": "riya@gmail.com",
+    "birthday": "April 10 1994",
+    "FatherName": "Nojrul Khan",
+    "address": "Dhanmondi, Dhaka, Bangladesh",
+    "education": "Bsc In Computer Science"
+  },
+  {
+    "id": 9,
+    "name": "Maisha Islam",
+    "img": "https://images.unsplash.com/photo-1522228115018-d838bcce5c3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHVzZXIlMjBwcm9maWxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
+    "email": "maisha@gmail.com",
+    "birthday": "April 10 1999",
+    "FatherName": "Nojrul Haque",
+    "address": "Gulshan, Dhaka, Bangladesh",
+    "education": "Bsc In Computer Science"
+  },
+  {
+    "id": 10,
+    "name": "Sadiya Ayman",
+    "img": "https://images.unsplash.com/photo-1499557354967-2b2d8910bcca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1936&q=80",
+    "email": "ayman@gmail.com",
+    "birthday": "Dec 10 1998",
+    "FatherName": "Tamim Khan",
+    "address": "Tejgao, Dhaka, Bangladesh",
+    "education": "Bsc In Computer Science"
+  }
+]
