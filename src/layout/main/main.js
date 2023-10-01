@@ -1,11 +1,11 @@
 import React from 'react';
-import Nav from './Navbar';
 import Home from '../../pages/Home/Home';
+import Navbar from './Navbar';
 
 const Main = () => {
     return (
         <div>
-            <Nav />
+            <Navbar />
             <Home />
         </div>
     );
