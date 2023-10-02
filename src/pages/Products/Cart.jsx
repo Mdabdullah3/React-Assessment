@@ -7,7 +7,7 @@ const ShoopingCart = () => {
   const dispatch = useDispatch();
   return (
     <div>
-      <body className="bg-gray-100">
+      <div className="bg-gray-100 w-10/12 mx-auto my-20">
         <div className="container mx-auto mt-10">
           <div className="flex shadow-md my-10">
             <div className="w-3/4 bg-white px-10 py-10">
@@ -99,14 +99,14 @@ const ShoopingCart = () => {
                   <span>Total cost</span>
                   <span>{(total ? total : 0).toFixed(2)}</span>
                 </div>
-                <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
+                <button className=" font-semibold bg-primary tracking-wider py-3 text-sm text-white uppercase w-full">
                   Checkout
                 </button>
               </div>
             </div>
           </div>
         </div>
-      </body>
+      </div>
     </div>
   );
 };

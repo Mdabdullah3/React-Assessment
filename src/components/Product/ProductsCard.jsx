@@ -2,7 +2,7 @@ import { AiTwotoneStar } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 import { HiMinus, HiOutlinePlus } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from "../../redux/features/CartSlice";
+import { AddToquantity, removeOne } from "../../redux/features/CartSlice";
 import { AddToCart } from "../../redux/features/AddCartSlice";
 
 const ProductsCard = ({ product }) => {
@@ -19,15 +19,15 @@ const ProductsCard = ({ product }) => {
   // Find the item in the cart that matches the current product
   const cartItem = cart.find((item) => item.id === product.id);
 
-  const handleAddToCart = () => {
-    dispatch(addToCart(product)); // Dispatch addToCart action
+  const handleAddToQuantity = () => {
+    dispatch(AddToquantity(product)); // Dispatch addToCart action
 
     // Update the product object with the quantity in your local state
     product.quantity = (product.quantity || 0) + 1;
   };
 
   const handleRemoveFromCart = () => {
-    dispatch(removeFromCart(product)); // Dispatch removeFromCart action
+    dispatch(removeOne(product)); // Dispatch removeFromCart action
 
     // Update the product object with the quantity in your local state
     if (cartItem) {
@@ -72,7 +72,7 @@ const ProductsCard = ({ product }) => {
       <div className="flex items-center justify-between">
         <div className="flex justify-center w-28 py-1 items-center border-[1px] border-primary rounded-md">
           <button
-            onClick={handleAddToCart}
+            onClick={handleAddToQuantity}
             className="text-primary after:border-[1px] after:border-primary flex after:ml-2 after:h-6 items-center after:opacity-40"
           >
             <HiOutlinePlus size="20" />

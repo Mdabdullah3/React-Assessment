@@ -17,8 +17,6 @@ const Shop = () => {
 
   const [categoryFilter, setCategoryFilter] = useState(null);
 
-  console.log(categoryFilter);
-
   const filteredBooks = products.filter((item) => {
     const searchData = Object.values(item).some((value) =>
       value.toString().toLowerCase().includes(searchFilter.toLowerCase())
@@ -26,7 +24,6 @@ const Shop = () => {
 
     const categoryData =
       categoryFilter === null || item.category.includes(categoryFilter);
-
     return searchData && categoryData;
   });
 
@@ -51,7 +48,7 @@ const Shop = () => {
   } else {
     productsData = currentData;
   }
-
+  console.log("products ", currentData);
   return (
     <>
       <div className="w-10/12 mx-auto flex justify-center mt-20">
@@ -89,7 +86,7 @@ const Shop = () => {
         </div>
       </div>
       <div>
-        {currentData?.length > 0 ? (
+        {productsData?.length > 0 ? (
           <Pagination
             totalItem={filteredBooks?.length}
             postsPerPage={postsPerPage}

@@ -29,29 +29,35 @@ const AddCartSlice = createSlice({
                 const updatedProducts = [...state.products];
                 updatedProducts[existingProductIndex] = updatedProduct;
 
-                return { ...state, products: updatedProducts };
+                state.products = updatedProducts;
             } else {
                 // Product doesn't exist in the cart, add it with the given quantity or 1
                 const quantityToAdd = action.payload.quantity || 1; // Use 1 if quantity is not provided in payload
                 const newProduct = { ...action.payload, quantity: quantityToAdd };
 
-                return {
-                    ...state,
-                    products: [...state.products, newProduct],
-                };
+                state.products.push(newProduct);
             }
+
+            // Calculate and update the total price
+            state.total = state.products.reduce(
+                (totalPrice, product) => totalPrice + (product.price * product.quantity),
+                0 // Initial total price is 0
+            );
         },
         removeFromCart: (state, action) => {
             state.products = state.products.filter(
                 (product) => product.id !== action.payload.id
             );
+
+            // Recalculate and update the total price after removing a product
+            state.total = state.products.reduce(
+                (totalPrice, product) => totalPrice + (product.price * product.quantity),
+                0 // Initial total price is 0
+            );
         },
-    }
+    },
 });
 
-export const {
-    AddToCart,
-    removeFromCart,
-} = AddCartSlice.actions;
+export const { AddToCart, removeFromCart } = AddCartSlice.actions;
 
 export default AddCartSlice.reducer;
