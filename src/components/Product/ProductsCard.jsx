@@ -48,7 +48,7 @@ const ProductsCard = ({ product }) => {
         />
       </div>
       <div className="h-36">
-        <h1 className="text-lg font-semibold mt-5 tracking-widest ">
+        <h1 className="md:text-lg text-md font-semibold mt-5 tracking-widest ">
           {product?.title ? product?.title.slice(0, 30) : "Not Found"}.
         </h1>
         <div className="flex items-center gap-4 py-2">
@@ -60,7 +60,7 @@ const ProductsCard = ({ product }) => {
           <h1 className="text-sm mb-1">({count})</h1>
         </div>
         <div className="flex items-center gap-4">
-          <h1 className="text-xl font-semibold tracking-wider">
+          <h1 className="md:text-xl text-lg font-semibold tracking-wider">
             ${price ? price.toFixed(2) : "Not Found"}
           </h1>
           <h1>
@@ -69,7 +69,7 @@ const ProductsCard = ({ product }) => {
           <h1 className="font-semibold text-sm tracking-widest">(-15%)</h1>
         </div>
       </div>
-      <div className="flex items-center justify-between">
+      <div className="md:flex mt-2 md:mt-0 items-center justify-between">
         <div className="flex justify-center w-28 py-1 items-center border-[1px] border-primary rounded-md">
           <button
             onClick={handleAddToQuantity}
@@ -87,7 +87,7 @@ const ProductsCard = ({ product }) => {
         </div>
         <button
           onClick={() => dispatch(AddToCart(product))}
-          className="font-semibold rounded-md flex items-center gap-2 px-6 py-2 bg-[#FFBFCD] text-primary tracking-wider"
+          className="mt-4 md:mt-0 font-semibold rounded-md flex items-center gap-2 px-6 py-2 bg-[#FFBFCD] text-primary tracking-wider"
         >
           <span className="text-xl">
             <BiShoppingBag />

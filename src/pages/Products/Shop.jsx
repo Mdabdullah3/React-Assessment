@@ -51,7 +51,7 @@ const Shop = () => {
   console.log("products ", currentData);
   return (
     <>
-      <div className="w-10/12 mx-auto flex justify-center mt-20">
+      <div className="md:w-10/12 w-11/12 mx-auto flex justify-center mt-20">
         <div className="flex flex-col">
           <div>
             <CategoryList setCategoryFilter={setCategoryFilter} />

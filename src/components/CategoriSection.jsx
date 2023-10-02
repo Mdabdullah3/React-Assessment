@@ -6,7 +6,7 @@ const CategoriSection = () => {
   return (
     <section>
       <hr />
-      <div className="mx-auto w-10/12 flex justify-between">
+      <div className="mx-auto md:w-10/12 w-11/12 md:flex justify-between">
         <div class="dropdown">
           <div className="flex items-center justify-between w-60 bg-[#F5CCDC] px-4 py-4 text-[#471D6B]">
             <h1 className="flex items-center gap-2 uppercase tracking-wider">
@@ -22,12 +22,9 @@ const CategoriSection = () => {
           <ul
             tabindex="0"
             class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li></li>
-            <li></li>
-          </ul>
+          ></ul>
         </div>
-        <div className="flex items-center gap-4 text-white">
+        <div className="flex items-center gap-4 text-white mt-3 md:mt-0">
           <button className="bg-[#471D6B] px-6 py-2 tracking-wider rounded-full">
             Offers
           </button>

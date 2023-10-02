@@ -28,7 +28,7 @@ const CategoryList = ({ setCategoryFilter }) => {
     <div className="relative inline-block text-left">
       <button
         onClick={toggleDropdown}
-        className="text-xl tracking-widest flex gap-20 items-center font-semibold"
+        className="md:text-xl text-sm tracking-widest flex md:gap-20 gap-1 items-center font-semibold"
       >
         Category
         <span>
@@ -47,11 +47,11 @@ const CategoryList = ({ setCategoryFilter }) => {
                   <input
                     type="radio"
                     name="category"
-                    className="mt-4"
+                    className="md:mt-4"
                     value={item}
                     id={item}
                   />
-                  <span className="text-md ml-3 capitalize tracking-wider">
+                  <span className="md:text-md text-sm md:ml-3 capitalize tracking-wider">
                     {item}
                   </span>
                 </label>

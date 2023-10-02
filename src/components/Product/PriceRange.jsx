@@ -9,10 +9,10 @@ const PriceRange = ({ handleSlider, priceRange }) => {
   };
 
   return (
-    <div className="relative inline-block text-left mt-48">
+    <div className="relative inline-block  mt-48">
       <button
         onClick={toggleDropdown}
-        className="text-xl tracking-widest flex gap-32 items-center font-semibold"
+        className="md:text-xl text-md tracking-widest flex md:gap-32 gap-2 items-center font-semibold"
       >
         Price
         <span>
@@ -36,7 +36,8 @@ const PriceRange = ({ handleSlider, priceRange }) => {
         </div>
       )}
       <div className="mt-14 ml-1 tracking-wider">
-        <span className="font-semibold">Price</span> - $0 To ${priceRange}
+        <span className="font-semibold text-sm">Price</span> - $0 To $
+        {priceRange}
       </div>
     </div>
   );
