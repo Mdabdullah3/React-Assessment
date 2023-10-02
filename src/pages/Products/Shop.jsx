@@ -49,6 +49,12 @@ const Shop = () => {
     productsData = currentData;
   }
   console.log("products ", currentData);
+
+  // Function to reset all filters
+  const handleResetFilters = () => {
+    setCategoryFilter(null); // Reset category filter
+    dispatch(setPriceRange(0)); // Reset price range
+  };
   return (
     <>
       <div className="md:w-10/12 w-11/12 mx-auto flex justify-center mt-20">
@@ -60,12 +66,15 @@ const Shop = () => {
             <PriceRange handleSlider={handleSlider} priceRange={priceRange} />
           </div>
           <div>
-            <button className="w-full py-2 bg-primary text-white tracking-wider rounded-lg mt-10">
+            <button
+              onClick={handleResetFilters}
+              className="border-[1px] hover:bg-transparent hover:text-primary transition duration-300 border-primary w-full py-2 bg-primary text-white tracking-wider rounded-lg my-10"
+            >
               All Reset
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ml-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ml-10 relative">
           {loading ? (
             <h1 className="text-2xl">
               <Loading />
@@ -75,10 +84,10 @@ const Shop = () => {
               <ProductsCard product={product}></ProductsCard>
             ))
           ) : (
-            <div>
+            <div className="mx-auto">
               <img
                 className="mx-auto"
-                src="https://www.bagbazaars.com/assets/img/no-product-found.png"
+                src="https://jalongi.com/public/assets/images/product_not_found.jpeg"
                 alt=""
               />
             </div>
