@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom"
 import Home from "../pages/Home/Home";
 import ShoopingCart from "../pages/Products/Cart";
+import Error from "../shared/Error";
 const routes = createBrowserRouter([
     {
         path: "/",
@@ -12,6 +13,10 @@ const routes = createBrowserRouter([
             {
                 path: "/shoppingCart",
                 element: <ShoopingCart />
+            },
+            {
+                path: "*",
+                element: <Error />
             }
         ]
     }

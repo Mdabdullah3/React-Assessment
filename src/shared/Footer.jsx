@@ -7,7 +7,7 @@ import { BsFacebook, BsLinkedin } from "react-icons/bs";
 const Footer = () => {
   return (
     <div className="bg-[#361354]">
-      <footer className="footer p-10  text-white  w-10/12 mx-auto">
+      <footer className="footer p-10  text-white  w-11/12 md:w-10/12 mx-auto">
         <div>
           <div className="flex items-end gap-5">
             <img src={logo} alt="" />
