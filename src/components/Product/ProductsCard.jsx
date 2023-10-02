@@ -1,4 +1,3 @@
-import React from "react";
 import { AiTwotoneStar } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 import { HiMinus, HiOutlinePlus } from "react-icons/hi";
@@ -10,6 +9,7 @@ const ProductsCard = ({ product }) => {
 
   const discountPrice = product?.price * 0.15; // 15 % discount
   const price = product?.price - discountPrice;
+
   return (
     <div className="border-[1px] border-primary mx-auto w-11/12 px-6 py-4 rounded-lg mb-7">
       <div>
@@ -38,7 +38,7 @@ const ProductsCard = ({ product }) => {
           <h1>
             <s>${product?.price}</s>
           </h1>
-          <h1 className="font-semibold text-sm tracking-widest">(15%)</h1>
+          <h1 className="font-semibold text-sm tracking-widest">(-15%)</h1>
         </div>
       </div>
       <div className="flex items-center justify-between">

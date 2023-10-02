@@ -11,7 +11,7 @@ const Pagination = ({ totalItem, postsPerPage, setCurrentPage, currentPage, }) =
                 <div className="w-10 h-10 text-xl mt-4 mx-2"> <button
                     key={index}
                     onClick={() => setCurrentPage(page)}
-                    className={page === currentPage ? "bg-primary px-4 text-white border-primary border text-xl py-1 rounded-sm" : "px-4 text-white py-1 border border-primary rounded-sm"}>
+                    className={page === currentPage ? "bg-primary px-4 text-white border-primary border text-xl py-1 rounded-sm" : "px-4 text-primary py-1 border border-primary rounded-sm"}>
                     {page}
                 </button></div>
 
