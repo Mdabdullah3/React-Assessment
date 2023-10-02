@@ -3,6 +3,7 @@ import CategoryList from "../../components/Product/Category";
 import useProducts from "../../hook/useProducts";
 import ProductsCard from "../../components/Product/ProductsCard.jsx";
 import Pagination from "../../components/Paigination";
+import PriceRange from "../../components/Product/PriceRange";
 
 const Shop = () => {
   const [products] = useProducts([]);
@@ -17,8 +18,13 @@ const Shop = () => {
   return (
     <>
       <div className="w-10/12 mx-auto flex justify-center mt-20">
-        <div>
-          <CategoryList />
+        <div className="flex flex-col">
+          <div>
+            <CategoryList />
+          </div>
+          <div>
+            <PriceRange />
+          </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ml-10">
           {currentData.map((product) => (
