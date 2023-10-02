@@ -9,8 +9,8 @@ const ShoopingCart = () => {
     <div>
       <div className="bg-gray-100 w-10/12 mx-auto my-20">
         <div className="container mx-auto mt-10">
-          <div className="flex shadow-md my-10">
-            <div className="w-3/4 bg-white px-10 py-10">
+          <div className="md:flex shadow-md my-10">
+            <div className="md:w-3/4 w-full bg-white md:px-10 px-4 py-10">
               <div className="flex justify-between border-b pb-8">
                 <h1 className="font-semibold text-2xl">Shopping Cart</h1>
                 <h2 className="font-semibold text-2xl">{products.length}</h2>
@@ -33,10 +33,16 @@ const ShoopingCart = () => {
                 <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
                   <div className="flex w-2/5">
                     <div className="w-20">
-                      <img className="h-24" src={item?.image} alt="product" />
+                      <img
+                        className="md:h-24 h-10"
+                        src={item?.image}
+                        alt="product"
+                      />
                     </div>
                     <div className="flex flex-col justify-between ml-4 flex-grow">
-                      <span className="font-bold text-sm">{item?.title}</span>
+                      <span className="md:font-bold text-sm">
+                        {item?.title}
+                      </span>
                       <span className="text-red-500 text-xs">
                         Quantity : {item?.quantity}
                       </span>
@@ -99,7 +105,7 @@ const ShoopingCart = () => {
                   <span>Total cost</span>
                   <span>{(total ? total : 0).toFixed(2)}</span>
                 </div>
-                <button className=" font-semibold bg-primary tracking-wider py-3 text-sm text-white uppercase w-full">
+                <button className=" font-semibold bg-primary tracking-wider py-3 text-sm text-white uppercase w-40">
                   Checkout
                 </button>
               </div>
