@@ -4,39 +4,63 @@ import useProducts from "../../hook/useProducts";
 import ProductsCard from "../../components/Product/ProductsCard.jsx";
 import Pagination from "../../components/Paigination";
 import PriceRange from "../../components/Product/PriceRange";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import Loading from "../../shared/Loading";
+import { setPriceRange } from "../../redux/features/ProductSlice";
 
 const Shop = () => {
-  const [products] = useProducts([]);
+  // Prdocuts Data by hooks
+  const [products, loading] = useProducts([]);
 
-  // Data By Searhing
-  const searchFilter = useSelector((state) => state.search);
+  // Data Show By Searhing
+  const searchFilter = useSelector((state) => state.search); // From Redux
 
-  let dataSeacrch = products.filter((item) => {
-    return Object.keys(item).some((key) =>
-      item[key]
-        .toString()
-        .toLowerCase()
-        .includes(searchFilter.toString().toLowerCase())
+  const [categoryFilter, setCategoryFilter] = useState(null);
+
+  console.log(categoryFilter);
+
+  const filteredBooks = products.filter((item) => {
+    const searchData = Object.values(item).some((value) =>
+      value.toString().toLowerCase().includes(searchFilter.toLowerCase())
     );
+
+    const categoryData =
+      categoryFilter === null || item.category.includes(categoryFilter);
+
+    return searchData && categoryData;
   });
 
   // Add Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
-
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
-  const currentData = dataSeacrch.slice(firstPostIndex, lastPostIndex);
+  const currentData = filteredBooks.slice(firstPostIndex, lastPostIndex);
+
+  // Price Range
+  const { priceRange } = useSelector((state) => state.priceRange);
+  const dispatch = useDispatch();
+  const handleSlider = (value) => {
+    dispatch(setPriceRange(value[0]));
+  };
+
+  // Price Range Data
+  let productsData;
+  if (priceRange > 0) {
+    productsData = currentData?.filter((item) => item.price <= priceRange);
+  } else {
+    productsData = currentData;
+  }
+
   return (
     <>
       <div className="w-10/12 mx-auto flex justify-center mt-20">
         <div className="flex flex-col">
           <div>
-            <CategoryList />
+            <CategoryList setCategoryFilter={setCategoryFilter} />
           </div>
           <div>
-            <PriceRange />
+            <PriceRange handleSlider={handleSlider} priceRange={priceRange} />
           </div>
           <div>
             <button className="w-full py-2 bg-primary text-white tracking-wider rounded-lg mt-10">
@@ -45,14 +69,18 @@ const Shop = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ml-10">
-          {currentData?.length > 0 ? (
-            currentData?.map((product) => (
+          {loading ? (
+            <h1 className="text-2xl">
+              <Loading />
+            </h1>
+          ) : productsData?.length > 0 ? (
+            productsData?.map((product) => (
               <ProductsCard product={product}></ProductsCard>
             ))
           ) : (
             <div>
               <img
-                className="w-full"
+                className="mx-auto"
                 src="https://www.bagbazaars.com/assets/img/no-product-found.png"
                 alt=""
               />
@@ -63,7 +91,7 @@ const Shop = () => {
       <div>
         {currentData?.length > 0 ? (
           <Pagination
-            totalItem={currentData?.length}
+            totalItem={filteredBooks?.length}
             postsPerPage={postsPerPage}
             setCurrentPage={setCurrentPage}
             currentPage={currentPage}

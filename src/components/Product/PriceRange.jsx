@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { HiPlus } from "react-icons/hi";
 
-const PriceRange = () => {
+const PriceRange = ({ handleSlider, priceRange }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <div className="relative inline-block text-left mt-48">
       <button
@@ -25,15 +26,17 @@ const PriceRange = () => {
       {isOpen && (
         <div className="absolute left-0 mt-4">
           <input
+            defaultValue={[priceRange]}
             type="range"
+            onChange={(e) => handleSlider([parseInt(e.target.value)])}
             min={0}
-            max={100}
+            max={1000}
             className="range range-primary"
           />
         </div>
       )}
       <div className="mt-14 ml-1 tracking-wider">
-        <span className="font-semibold">Price</span> - $0 To ${100}
+        <span className="font-semibold">Price</span> - $0 To ${priceRange}
       </div>
     </div>
   );

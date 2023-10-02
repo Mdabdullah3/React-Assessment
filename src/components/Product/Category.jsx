@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HiPlus } from "react-icons/hi";
 import useProducts from "../../hook/useProducts";
 
-const CategoryList = () => {
+const CategoryList = ({ setCategoryFilter }) => {
   const [isOpen, setIsOpen] = useState(true);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -43,7 +43,7 @@ const CategoryList = () => {
           <ul className="py-1">
             {uniqueCategoryArray.map((item) => (
               <div className="">
-                <label htmlFor={item}>
+                <label onChange={() => setCategoryFilter(item)} htmlFor={item}>
                   <input
                     type="radio"
                     name="category"

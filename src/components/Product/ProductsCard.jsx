@@ -1,6 +1,8 @@
 import { AiTwotoneStar } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 import { HiMinus, HiOutlinePlus } from "react-icons/hi";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeOne } from "../../redux/features/Cart";
 
 const ProductsCard = ({ product }) => {
   const rating = Math.round(parseFloat(product?.rating?.rate));
@@ -10,6 +12,10 @@ const ProductsCard = ({ product }) => {
   const discountPrice = product?.price * 0.15; // 15 % discount
   const price = product?.price - discountPrice;
 
+  // From Redux
+  const { products, total } = useSelector((state) => state?.cart);
+  const dispatch = useDispatch();
+  console.log(products);
   return (
     <div className="border-[1px] border-primary mx-auto w-11/12 px-6 py-4 rounded-lg mb-7">
       <div>
@@ -43,11 +49,23 @@ const ProductsCard = ({ product }) => {
       </div>
       <div className="flex items-center justify-between">
         <div className="flex justify-center w-28 py-1 items-center border-[1px] border-primary rounded-md">
-          <button className="text-primary after:border-[1px] after:border-primary flex after:ml-2 after:h-6 items-center after:opacity-40">
+          <button
+            onClick={() => dispatch(addToCart(product))}
+            className="text-primary after:border-[1px] after:border-primary flex after:ml-2 after:h-6 items-center after:opacity-40"
+          >
             <HiOutlinePlus size="20" />
           </button>
-          <h1 className="text-lg px-3">0 </h1>
-          <button className="text-primary before:border-[1px] before:border-primary flex before:mr-2 before:h-6 items-center before:opacity-40">
+          <h1 className="text-lg px-3">
+            {products.map((item) => (
+              <>
+                <h1>{product.title === item.title ? item?.quantity : 0}</h1>
+              </>
+            ))}
+          </h1>
+          <button
+            onClick={() => dispatch(removeOne(product))}
+            className="text-primary before:border-[1px] before:border-primary flex before:mr-2 before:h-6 items-center before:opacity-40"
+          >
             <HiMinus size="20" />
           </button>
         </div>
