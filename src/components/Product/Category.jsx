@@ -4,7 +4,6 @@ import useProducts from "../../hook/useProducts";
 
 const CategoryList = () => {
   const [isOpen, setIsOpen] = useState(true);
-
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -39,7 +38,6 @@ const CategoryList = () => {
       <div>
         <h1 className="border-b-2 mt-3 border-primary"> </h1>
       </div>
-
       {isOpen && (
         <div className="absolute left-0 mt-2">
           <ul className="py-1">
