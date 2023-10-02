@@ -6,7 +6,7 @@ import ProductsCard from "../../components/Product/ProductsCard.jsx";
 const Shop = () => {
   const [products] = useProducts([]);
   return (
-    <div className="w-10/12 mx-auto flex justify-center">
+    <div className="w-10/12 mx-auto flex justify-center mt-20">
       <div>
         <CategoryList />
       </div>
