@@ -25,6 +25,11 @@ const Shop = () => {
           <div>
             <PriceRange />
           </div>
+          <div>
+            <button className="w-full py-2 bg-primary text-white tracking-wider rounded-lg mt-10">
+              All Reset
+            </button>
+          </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ml-10">
           {currentData.map((product) => (
